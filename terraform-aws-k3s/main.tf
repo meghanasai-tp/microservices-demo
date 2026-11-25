@@ -61,7 +61,7 @@ resource "aws_security_group" "k3s_sg" {
 
 resource "aws_instance" "k3s" {
   ami = data.aws_ami.ubuntu.id
-  instance_type = "t3.medium"
+  instance_type = "m7i-flex.large"
   key_name = var.key_name
   vpc_security_group_ids = [aws_security_group.k3s_sg.id]
 
